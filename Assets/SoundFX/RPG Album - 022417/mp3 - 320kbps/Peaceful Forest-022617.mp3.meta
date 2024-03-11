@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 83d646b9ca7f869448479692f4d1232a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 84994
+  packageName: RPG BGM Album - 022417
+  packageVersion: 1.0
+  assetPath: Assets/RPG Album - 022417/mp3 - 320kbps/Peaceful Forest-022617.mp3
+  uploadId: 166600
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 7
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 0
+    sampleRateSetting: 1
+    sampleRateOverride: 48000
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 1
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
