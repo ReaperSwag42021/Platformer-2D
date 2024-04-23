@@ -15,8 +15,8 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
-            collectionSoundEffect.Play();
             Destroy(collision.gameObject);
+            collectionSoundEffect.Play();
             keys++;
             keysText.text = "Keys: " + keys;
         }
