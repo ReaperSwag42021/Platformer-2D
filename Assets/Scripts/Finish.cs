@@ -14,9 +14,9 @@ public class Finish : MonoBehaviour
         myAnimationController = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OpenChestAnimation()
     {
-        if (collision.gameObject.name == "Player" && !levelCompleted)
+        if (!levelCompleted)
         {
             finishSound.Play();
             myAnimationController.SetTrigger("PlayAnimChest");

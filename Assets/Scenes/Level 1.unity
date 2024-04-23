@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 290707051}
   - component: {fileID: 290707052}
   - component: {fileID: 290707053}
+  - component: {fileID: 290707054}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -995,7 +996,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290707039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e8a4f3a5b1e1a41b69d0ee62f35379, type: 3}
   m_Name: 
@@ -1216,7 +1217,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290707039}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1255,6 +1256,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6566262, y: 0.07818726}
   m_EdgeRadius: 0
+--- !u!114 &290707054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290707039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647d6f8849a7aee42954f2f9343307fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysText: {fileID: 240760372}
+  collectionSoundEffect: {fileID: 290707050}
+  chest: {fileID: 1383312600}
+  finishScript: {fileID: 1383312602}
 --- !u!4 &309520329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
@@ -1382,6 +1399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2652345840765365697, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 1383312600}
     - target: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.75
@@ -1847,6 +1868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2652345840765365697, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 1383312600}
     - target: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -11858,26 +11883,6 @@ Tilemap:
   m_GameObject: {fileID: 1242067312}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 46, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 47, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 29, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -12504,9 +12509,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5471b3124f98b624880b57c0e5830a3b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6e9c153bfbf2be1449c83f9008e7e8c7, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 5cd29536ccfcba143823bf029d654391, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 588436939a3b39948b05c37f4b291e6a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 5f82c22c8d57de24fa614ec8c6845ade, type: 2}
@@ -12565,9 +12570,9 @@ Tilemap:
     m_Data: {fileID: -1896481790, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1043207387, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 1952543706, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: -454810601, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1897294959, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
@@ -12612,7 +12617,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 1713858212, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 43
+  - m_RefCount: 41
     m_Data:
       e00: 1
       e01: 0
@@ -12685,7 +12690,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 63
+  - m_RefCount: 61
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -14260,6 +14265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2652345840765365697, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 1383312600}
     - target: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.62
@@ -14441,6 +14450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 2652345840765365697, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 1383312600}
     - target: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.63
