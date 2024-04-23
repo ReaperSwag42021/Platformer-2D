@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 2771997c796f46d4386fe9cdfa716aed
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271986
+  packageName: Pixel Art Key Pack - Animated
+  packageVersion: 1.0
+  assetPath: Assets/karsiori/Sprites/Pixel Art Key Pack - Animated/Key 5/GOLD/Key
+    5 - GOLD - frame0002.png
+  uploadId: 631378
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -48,7 +56,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,11 +146,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 271986
-  packageName: Pixel Art Key Pack - Animated
-  packageVersion: 1.0
-  assetPath: Assets/karsiori/Sprites/Pixel Art Key Pack - Animated/Key 5/GOLD/Key
-    5 - GOLD - frame0002.png
-  uploadId: 631378

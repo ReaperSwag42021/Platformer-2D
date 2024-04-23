@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - Collectible
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Collectible
   - 
   - 
   - 
@@ -42,9 +44,15 @@ TagManager:
   - name: background
     uniqueID: 3587232429
     locked: 0
+  - name: background (plantlife)
+    uniqueID: 354266307
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: terrain
     uniqueID: 2391634921
+    locked: 0
+  - name: Player
+    uniqueID: 1112091737
     locked: 0

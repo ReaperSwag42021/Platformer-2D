@@ -109,7 +109,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ground"))
         {
-            PlaySoundEffect(landingSoundEffect);
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                // Check if the collision normal is approximately up (i.e., we've hit a horizontal surface)
+                if (Vector2.Dot(point.normal, Vector2.up) > 0.9f)
+                {
+                    PlaySoundEffect(landingSoundEffect);
+                }
+            }
         }
     }
 }
