@@ -6,8 +6,6 @@ public class Chest_Item : MonoBehaviour
 {
     [SerializeField] private Animator myAnimationController;
 
-    private bool levelCompleted = false;
-
     private void Start()
     {
         myAnimationController = GetComponent<Animator>();
