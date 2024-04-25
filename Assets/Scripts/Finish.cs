@@ -13,14 +13,15 @@ public class Finish : MonoBehaviour
         finishSound = GetComponent<AudioSource>();
         myAnimationController = GetComponent<Animator>();
     }
-
-    public void OpenChestAnimation()
+    public void OpenChestAndCompleteLevel()
     {
         if (!levelCompleted)
         {
             finishSound.Play();
-            myAnimationController.SetTrigger("PlayAnimChest");
+            myAnimationController.SetTrigger("PlayAnimChestItem");
+            myAnimationController.SetTrigger("PlayAnimChestItem(Loop)");
             levelCompleted = true;
+            Invoke("CompleteLevel", 8f);
         }
     }
 }

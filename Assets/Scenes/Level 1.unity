@@ -996,7 +996,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290707039}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e8a4f3a5b1e1a41b69d0ee62f35379, type: 3}
   m_Name: 
@@ -1270,8 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keysText: {fileID: 240760372}
   collectionSoundEffect: {fileID: 290707050}
-  chest: {fileID: 1383312600}
-  finishScript: {fileID: 1383312602}
+  finish: {fileID: 0}
 --- !u!4 &309520329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}

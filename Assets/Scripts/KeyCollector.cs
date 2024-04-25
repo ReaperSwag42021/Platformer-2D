@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// KeyCollector script
 public class KeyCollector : MonoBehaviour
 {
     private int keys = 0;
 
     [SerializeField] private Text keysText;
     [SerializeField] private AudioSource collectionSoundEffect;
-    [SerializeField] private GameObject chest;
-    [SerializeField] private Finish finishScript;
+    public Finish finish;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,15 +18,18 @@ public class KeyCollector : MonoBehaviour
             collectionSoundEffect.Play();
             keys++;
             keysText.text = "Keys: " + keys;
+        }
+        else if (collision.gameObject.CompareTag("Finish"))
+        {
             OpenChest();
         }
     }
 
-    private void OpenChest()
+    public void OpenChest()
     {
         if (keys == 4)
         {
-            finishScript.OpenChestAnimation();
+            finish.OpenChestAndCompleteLevel();
             Debug.Log("Chest opened!");
         }
         else
