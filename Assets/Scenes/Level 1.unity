@@ -1256,6 +1256,7 @@ MonoBehaviour:
   keysText: {fileID: 240760372}
   collectionSoundEffect: {fileID: 290707050}
   finish: {fileID: 1383312602}
+  Chest_Item: {fileID: 1191708051}
 --- !u!4 &309520329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956307953520294217, guid: 1eceb9ed3f404d04ebc8352157d40518, type: 3}
@@ -11695,7 +11696,7 @@ Transform:
   m_GameObject: {fileID: 1191708050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.81, y: -1.833, z: 0}
+  m_LocalPosition: {x: 48.81, y: -2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11735,7 +11736,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0055828094, y: 0.06418854}
+  m_Offset: {x: 0.0055828094, y: 0.38154656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11745,7 +11746,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8600197, y: 0.80837715}
+  m_Size: {x: 0.8600197, y: 1.4430932}
   m_EdgeRadius: 0
 --- !u!95 &1191708056
 Animator:
