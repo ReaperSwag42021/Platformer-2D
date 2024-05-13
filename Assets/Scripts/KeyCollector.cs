@@ -9,6 +9,7 @@ public class KeyCollector : MonoBehaviour
     [SerializeField] private Text keysText;
     [SerializeField] private AudioSource collectionSoundEffect;
     public Finish finish;
+    public Chest_Item Chest_Item;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,6 +31,7 @@ public class KeyCollector : MonoBehaviour
         if (keys == 4)
         {
             finish.OpenChestAndCompleteLevel();
+            Chest_Item.ChestItemAnimation();
             Debug.Log("Chest opened!");
         }
         else

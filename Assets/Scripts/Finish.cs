@@ -18,8 +18,7 @@ public class Finish : MonoBehaviour
         if (!levelCompleted)
         {
             finishSound.Play();
-            myAnimationController.SetTrigger("PlayAnimChestItem");
-            myAnimationController.SetTrigger("PlayAnimChestItem(Loop)");
+            myAnimationController.SetTrigger("PlayAnimChest");
             levelCompleted = true;
             Invoke("CompleteLevel", 8f);
         }
