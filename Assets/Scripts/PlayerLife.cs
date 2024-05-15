@@ -16,12 +16,12 @@ public class PlayerLife : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
             Destroy(DeathController.BoxCollider2D);
-            
             Die();
         }
     }
@@ -34,11 +34,6 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death");
         StartCoroutine("Restartlevel");
     }
-
-    //private void RestartLevel()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //}
 
     public IEnumerator Restartlevel()
     {

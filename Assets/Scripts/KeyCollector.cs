@@ -28,7 +28,6 @@ public class KeyCollector : MonoBehaviour
 
     public void OpenChest()
     {
-        Debug.Log("OpenChest called. Finish is null: " + (finish == null) + ", Chest_Item is null: " + (Chest_Item == null));
         if (keys == 4)
         {
             finish.OpenChestAndCompleteLevel();

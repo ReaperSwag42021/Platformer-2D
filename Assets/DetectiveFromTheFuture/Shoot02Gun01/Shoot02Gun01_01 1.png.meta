@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 265eb8839f9f0094db2a24ff33519963
+guid: 632d04ec1b8283547a7e1ab4f4d29a94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6356986133591018163
-    second: Idle_02_0
+      213: 4644787031146511916
+    second: Shoot02Gun01_01 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,22 +100,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_02_0
+      name: Shoot02Gun01_01 1_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 26
         y: 16
-        width: 15
-        height: 22
+        width: 21
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d453931dac277c7a0800000000000000
-      internalID: -6356986133591018163
+      spriteID: c2e34d81239957040800000000000000
+      internalID: 4644787031146511916
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c11971acc2f4112468cfd7dab8d8939a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_02_0: -6356986133591018163
+      Shoot02Gun01_01 1_0: 4644787031146511916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
