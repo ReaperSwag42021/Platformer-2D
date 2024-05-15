@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D boxCollider;
 
     [SerializeField] private AudioSource deathSoundEffect;
 
@@ -12,11 +14,14 @@ public class PlayerLife : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
+            Destroy(DeathController.BoxCollider2D);
+            
             Die();
         }
     }
@@ -27,10 +32,21 @@ public class PlayerLife : MonoBehaviour
         rb.velocityX = 0;
         deathSoundEffect.Play();
         anim.SetTrigger("death");
+        StartCoroutine("Restartlevel");
     }
 
-    private void RestartLevel()
+    //private void RestartLevel()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //}
+
+    public IEnumerator Restartlevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StopAllCoroutines();
+        }
     }
 }
