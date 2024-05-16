@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     public int damage;
     public LayerMask whatIsSolid;
 
-    public GameObject destroyEffect;
+    //public GameObject destroyEffect;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                //hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Enemy>().TakeDamage(1);
             }
             DestroyProjectile();
         }
@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

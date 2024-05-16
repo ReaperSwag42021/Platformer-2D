@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
     public float offset;
-
     public GameObject projectile;
     public GameObject shotEffect;
     public Transform shotPoint;
-
     private float timeBtwShots;
     public float startTimeBtwShots;
 
@@ -26,7 +23,8 @@ public class Weapon : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Instantiate(shotEffect, shotPoint.position, Quaternion.identity);
-                Instantiate(projectile, shotPoint.position, transform.rotation);
+                Quaternion projectileRotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+                Instantiate(projectile, shotPoint.position, projectileRotation);
                 timeBtwShots = startTimeBtwShots;
             }
         }
@@ -34,7 +32,5 @@ public class Weapon : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
-
     }
 }

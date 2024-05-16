@@ -7,6 +7,7 @@ TagManager:
   - ground
   - Collectible
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - UI
   - Ground
   - Collectible
-  - 
-  - 
+  - Enemy
+  - Environment
   - 
   - 
   - 
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1112091737
+    locked: 0
+  - name: Projectiles
+    uniqueID: 1721504107
     locked: 0
