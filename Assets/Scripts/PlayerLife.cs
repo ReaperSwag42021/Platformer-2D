@@ -21,7 +21,6 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            Destroy(DeathController.BoxCollider2D);
             Die();
         }
     }
