@@ -2,26 +2,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
     public Animator camAnim;
     public int health;
-    public Animator deathAnim;
+    public GameObject deathAnimPrefab; // Changed to GameObject
     public GameObject explosion;
     private Rigidbody2D rb;
-    //private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
     private enum MovementState { idle, running }
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
-    //[SerializeField] private AudioSource audioSource;
-
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -33,7 +28,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(deathAnim, transform.position, Quaternion.identity);
+            Instantiate(deathAnimPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         UpdateAnimationState();

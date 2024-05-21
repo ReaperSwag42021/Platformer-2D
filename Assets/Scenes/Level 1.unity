@@ -1954,6 +1954,7 @@ MonoBehaviour:
   shotEffect: {fileID: 160796, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
   shotPoint: {fileID: 1583463025}
   startTimeBtwShots: 2
+  eastOffsetDistance: 0
 --- !u!212 &607291845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12014,7 +12015,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -12044,7 +12045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camAnim: {fileID: 1235482879}
   health: 3
-  deathAnim: {fileID: 1235482879}
+  deathAnimPrefab: {fileID: 1235482878}
   explosion: {fileID: 459568462348322209, guid: eb360162b51752b479878f0099606294, type: 3}
   moveSpeed: 4
 --- !u!50 &1235482884

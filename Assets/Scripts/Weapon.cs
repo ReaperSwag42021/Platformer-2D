@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public Transform shotPoint;
     private float timeBtwShots;
     public float startTimeBtwShots;
+    public float eastOffsetDistance = 0.5f; // Distance to offset the projectile to the east
 
     private void Update()
     {
@@ -22,9 +23,18 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                Instantiate(shotEffect, shotPoint.position, Quaternion.identity);
-                Quaternion projectileRotation = Quaternion.Euler(0f, 0f, rotZ + offset);
-                Instantiate(projectile, shotPoint.position, projectileRotation);
+                // Calculate the east offset position
+                Vector3 eastOffset = shotPoint.position + (transform.right * eastOffsetDistance);
+
+                Instantiate(shotEffect, eastOffset, Quaternion.identity);
+
+                // Calculate the direction
+                Vector3 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - eastOffset);
+                direction.z = 0;
+                direction.Normalize();
+
+                GameObject newProjectile = Instantiate(projectile, eastOffset, Quaternion.identity);
+                newProjectile.GetComponent<Projectile>().SetDirection(direction); // Set the direction based on the normalized vector
                 timeBtwShots = startTimeBtwShots;
             }
         }
