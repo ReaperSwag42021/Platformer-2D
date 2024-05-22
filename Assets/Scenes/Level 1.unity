@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 290707054}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12048,6 +12048,7 @@ MonoBehaviour:
   deathAnimPrefab: {fileID: 1235482878}
   explosion: {fileID: 459568462348322209, guid: eb360162b51752b479878f0099606294, type: 3}
   moveSpeed: 4
+  chaseDistance: 10
 --- !u!50 &1235482884
 Rigidbody2D:
   serializedVersion: 4
