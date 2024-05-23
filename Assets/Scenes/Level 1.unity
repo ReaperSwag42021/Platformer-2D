@@ -1953,7 +1953,7 @@ MonoBehaviour:
   projectile: {fileID: 7673517390994890173, guid: 8696eecf4934d60428feadb8cd14b779, type: 3}
   shotEffect: {fileID: 160796, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
   shotPoint: {fileID: 1583463025}
-  startTimeBtwShots: 2
+  startTimeBtwShots: 0.5
   eastOffsetDistance: 0
 --- !u!212 &607291845
 SpriteRenderer:
@@ -14552,6 +14552,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2112162565 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3673490573511494824, guid: f5eb8f36fa5536c45873dafedcfc4ece, type: 3}
+  m_PrefabInstance: {fileID: 3450075651525585587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125390569
 GameObject:
   m_ObjectHideFlags: 0
@@ -14689,6 +14694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8142945826102923217, guid: f5eb8f36fa5536c45873dafedcfc4ece, type: 3}
+      propertyPath: deathAnim
+      value: 
+      objectReference: {fileID: 2112162565}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

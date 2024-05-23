@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -22,15 +20,12 @@ public class Projectile : MonoBehaviour
         moveDirection = direction.normalized;
     }
 
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, moveDirection, distance, whatIsSolid);
-        if (hitInfo.collider != null)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
-            {
-                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
-            }
+            Enemy.health--;
+            
             DestroyProjectile();
         }
 

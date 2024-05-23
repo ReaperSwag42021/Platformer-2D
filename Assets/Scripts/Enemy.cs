@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Animator camAnim;
-    public int health;
-    public GameObject deathAnimPrefab;  // This should be a visual effect, not an enemy
+    public static int health = 3;
+    public Animator deathAnim;
     public GameObject explosion;
     public float moveSpeed = 5f;
     public float chaseDistance = 10f;
 
     private Rigidbody2D rb;
-    private SpriteRenderer sprite;
     private Animator anim;
     private Transform player;
     private bool isFacingRight = true;
@@ -20,7 +18,6 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
     }
@@ -43,6 +40,21 @@ public class Enemy : MonoBehaviour
         UpdateAnimationState();
     }
 
+    public void TakeDamage(int damage)
+    {
+        if (isDead) return;
+
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        health -= damage;
+
+        Debug.Log("Enemy took damage. Current health: " + health);
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     private void MoveTowardsPlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
@@ -63,22 +75,6 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
-    public void TakeDamage(int damage)
-    {
-        if (isDead) return;
-
-        camAnim.SetTrigger("shake");
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        health -= damage;
-
-        Debug.Log("Enemy took damage. Current health: " + health);
-
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
     private void Die()
     {
         if (isDead) return;
@@ -88,30 +84,30 @@ public class Enemy : MonoBehaviour
 
         Debug.Log("Enemy is dying.");
 
-        if (deathAnimPrefab != null)
+        if (deathAnim != null)
         {
             Debug.Log("Instantiating death animation prefab.");
-            Instantiate(deathAnimPrefab, transform.position, Quaternion.identity);
+            Instantiate(deathAnim, transform.position, Quaternion.identity);
         }
         else
         {
             Debug.LogWarning("deathAnimPrefab is not assigned.");
         }
 
-        // Disable the enemy's collider and renderer to avoid further interaction and visibility
-        Collider2D collider = GetComponent<Collider2D>();
-        if (collider != null) collider.enabled = false;
-
+        // Disable the enemy's sprite renderer to make it invisible
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         if (renderer != null) renderer.enabled = false;
 
-        // Optionally, stop the animator if you want to stop all animations
+        // Trigger the death animation
         if (anim != null)
         {
             anim.SetTrigger("die");
         }
 
-        // Destroy the game object after a delay to ensure all effects are played
+        // Disable this script to stop further updates
+        this.enabled = false;
+
+        // Destroy the game object after a short delay
         Destroy(gameObject, 0.5f);
     }
 
@@ -119,17 +115,7 @@ public class Enemy : MonoBehaviour
     {
         if (isDead) return;
 
-        MovementState state;
-
-        if (rb.velocity.x != 0)
-        {
-            state = MovementState.running;
-        }
-        else
-        {
-            state = MovementState.idle;
-        }
-
+        MovementState state = rb.velocity.x != 0 ? MovementState.running : MovementState.idle;
         anim.SetInteger("state", (int)state);
     }
 
