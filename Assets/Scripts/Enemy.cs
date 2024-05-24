@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -84,20 +85,6 @@ public class Enemy : MonoBehaviour
 
         Debug.Log("Enemy is dying.");
 
-        if (deathAnim != null)
-        {
-            Debug.Log("Instantiating death animation prefab.");
-            Instantiate(deathAnim, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.LogWarning("deathAnimPrefab is not assigned.");
-        }
-
-        // Disable the enemy's sprite renderer to make it invisible
-        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        if (renderer != null) renderer.enabled = false;
-
         // Trigger the death animation
         if (anim != null)
         {
@@ -107,8 +94,8 @@ public class Enemy : MonoBehaviour
         // Disable this script to stop further updates
         this.enabled = false;
 
-        // Destroy the game object after a short delay
-        Destroy(gameObject, 0.5f);
+        Object.Destroy(gameObject, 3f);
+        Object.Destroy(rb);
     }
 
     private void UpdateAnimationState()

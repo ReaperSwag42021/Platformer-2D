@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public float offset;
     public GameObject projectile;
-    public GameObject shotEffect;
+    //public GameObject shotEffect;
     public Transform shotPoint;
     private float timeBtwShots;
     public float startTimeBtwShots;
@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
                 // Calculate the east offset position
                 Vector3 eastOffset = shotPoint.position + (transform.right * eastOffsetDistance);
 
-                Instantiate(shotEffect, eastOffset, Quaternion.identity);
+                //Instantiate(shotEffect, eastOffset, Quaternion.identity);
 
                 // Calculate the direction
                 Vector3 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - eastOffset);

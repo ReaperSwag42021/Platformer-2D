@@ -34,7 +34,14 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Enemy.health--;
+            // Get the Enemy script from the collided game object
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+            // Call the TakeDamage method on the Enemy script
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
 
             DestroyProjectile();
         }

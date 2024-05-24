@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningTimer: 0
   currentTime: 0
-  maxTime: 10
+  maxTime: 30
   player: {fileID: 290707051}
 --- !u!4 &382648858
 Transform:
@@ -2000,7 +2000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0
   projectile: {fileID: 7673517390994890173, guid: 8696eecf4934d60428feadb8cd14b779, type: 3}
-  shotEffect: {fileID: 160796, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
   shotPoint: {fileID: 1583463025}
   startTimeBtwShots: 0.5
   eastOffsetDistance: 0
