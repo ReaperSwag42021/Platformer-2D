@@ -1,9 +1,12 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public GameMaster gameMaster;
+
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -25,9 +28,10 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         Destroy(GetComponent<PlayerMovement>());
+        Destroy(transform.Find("Weapon")?.gameObject);
         rb.velocityX = 0;
         deathSoundEffect.Play();
         anim.SetTrigger("death");
@@ -41,6 +45,8 @@ public class PlayerLife : MonoBehaviour
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             StopAllCoroutines();
+            Invoke("gameMaster.RestartLevel()", 2f);
+            
         }
     }
 }
