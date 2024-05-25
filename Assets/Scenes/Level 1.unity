@@ -11759,7 +11759,7 @@ GameObject:
   - component: {fileID: 1191708051}
   - component: {fileID: 1191708055}
   - component: {fileID: 1191708056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crystal_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

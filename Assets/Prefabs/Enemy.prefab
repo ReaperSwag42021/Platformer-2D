@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathAnim: {fileID: 3673490573511494824}
-  explosion: {fileID: 459568462348322209, guid: eb360162b51752b479878f0099606294, type: 3}
   moveSpeed: 4
   chaseDistance: 10
 --- !u!50 &6482138959667686959

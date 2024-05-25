@@ -4,7 +4,6 @@ public class Projectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
-    public float distance;
     public int damage;
     public LayerMask whatIsSolid;
 
@@ -30,12 +29,19 @@ public class Projectile : MonoBehaviour
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        // Check if the collided object's layer is the "Ground" layer
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Ground")
+        {
+            DestroyProjectile();
+            Debug.Log("Projectile hit the ground");
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             // Get the Enemy script from the collided game object
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            Debug.Log("Projectile hit enemy!");
 
             // Call the TakeDamage method on the Enemy script
             if (enemy != null)

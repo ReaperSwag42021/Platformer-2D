@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public static int health = 3;
+    public int health = 3;
     public Animator deathAnim;
-    public GameObject explosion;
+    //public GameObject explosion;
     public float moveSpeed = 5f;
     public float chaseDistance = 10f;
 
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if (isDead) return;
 
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        //Instantiate(explosion, transform.position, Quaternion.identity);
         health -= damage;
 
         Debug.Log("Enemy took damage. Current health: " + health);
@@ -85,6 +85,9 @@ public class Enemy : MonoBehaviour
 
         Debug.Log("Enemy is dying.");
 
+        // Disable the BoxCollider2D
+        GetComponent<BoxCollider2D>().enabled = false;
+
         // Trigger the death animation
         if (anim != null)
         {
@@ -94,8 +97,8 @@ public class Enemy : MonoBehaviour
         // Disable this script to stop further updates
         this.enabled = false;
 
-        Object.Destroy(gameObject, 3f);
         Object.Destroy(rb);
+        Object.Destroy(gameObject, 3f);
     }
 
     private void UpdateAnimationState()
