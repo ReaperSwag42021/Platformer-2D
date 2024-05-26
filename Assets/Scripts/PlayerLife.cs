@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     public GameMaster gameMaster;
+    public int health = 3;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -28,7 +29,15 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+public void Die()
     {
         Destroy(GetComponent<PlayerMovement>());
         Destroy(transform.Find("Weapon")?.gameObject);

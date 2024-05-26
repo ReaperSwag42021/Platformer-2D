@@ -1,19 +1,19 @@
-using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     public int health = 3;
     public Animator deathAnim;
-    //public GameObject explosion;
     public float moveSpeed = 5f;
     public float chaseDistance = 10f;
+    public float damageCooldown = 3f;
 
     private Rigidbody2D rb;
     private Animator anim;
     private Transform player;
     private bool isFacingRight = true;
     private bool isDead = false;
+    private float lastDamageTime = 0;
     private enum MovementState { idle, running }
 
     private void Start()
@@ -41,79 +41,88 @@ public class Enemy : MonoBehaviour
         UpdateAnimationState();
     }
 
-    public void TakeDamage(int damage)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDead) return;
-
-        //Instantiate(explosion, transform.position, Quaternion.identity);
-        health -= damage;
-
-        Debug.Log("Enemy took damage. Current health: " + health);
-
-        if (health <= 0)
+        if (collision.gameObject.CompareTag("Player") && Time.time >= lastDamageTime + damageCooldown)
         {
-            Die();
+            collision.gameObject.GetComponent<PlayerLife>().TakeDamage(1);
+            lastDamageTime = Time.time;
         }
     }
 
-    private void MoveTowardsPlayer()
-    {
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
 
-        if (direction.x > 0 && !isFacingRight)
-        {
-            Flip();
-        }
-        else if (direction.x < 0 && isFacingRight)
-        {
-            Flip();
-        }
+public void TakeDamage(int damage)
+{
+    if (isDead) return;
+
+    health -= damage;
+
+    Debug.Log("Enemy took damage. Current health: " + health);
+
+    if (health <= 0)
+    {
+        Die();
+    }
+}
+
+private void MoveTowardsPlayer()
+{
+    Vector2 direction = (player.position - transform.position).normalized;
+    rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+
+    if (direction.x > 0 && !isFacingRight)
+    {
+        Flip();
+    }
+    else if (direction.x < 0 && isFacingRight)
+    {
+        Flip();
+    }
+}
+
+private void StopMovement()
+{
+    rb.velocity = new Vector2(0, rb.velocity.y);
+}
+
+private void Die()
+{
+    if (isDead) return;
+
+    isDead = true;
+    rb.velocity = Vector2.zero;
+
+    Debug.Log("Enemy is dying.");
+
+    
+    GetComponent<BoxCollider2D>().enabled = false;
+
+    
+    if (anim != null)
+    {
+        anim.SetTrigger("die");
     }
 
-    private void StopMovement()
-    {
-        rb.velocity = new Vector2(0, rb.velocity.y);
-    }
+    
+    this.enabled = false;
 
-    private void Die()
-    {
-        if (isDead) return;
+    Object.Destroy(rb);
+    Object.Destroy(gameObject, 3f);
+}
 
-        isDead = true;
-        rb.velocity = Vector2.zero; // Stop movement
+private void UpdateAnimationState()
+{
+    if (isDead) return;
 
-        Debug.Log("Enemy is dying.");
+    MovementState state = rb.velocity.x != 0 ? MovementState.running : MovementState.idle;
+    anim.SetInteger("state", (int)state);
+}
 
-        // Disable the BoxCollider2D
-        GetComponent<BoxCollider2D>().enabled = false;
-
-        // Trigger the death animation
-        if (anim != null)
-        {
-            anim.SetTrigger("die");
-        }
-
-        // Disable this script to stop further updates
-        this.enabled = false;
-
-        Object.Destroy(rb);
-        Object.Destroy(gameObject, 3f);
-    }
-
-    private void UpdateAnimationState()
-    {
-        if (isDead) return;
-
-        MovementState state = rb.velocity.x != 0 ? MovementState.running : MovementState.idle;
-        anim.SetInteger("state", (int)state);
-    }
-
-    private void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
-    }
+private void Flip()
+{
+    isFacingRight = !isFacingRight;
+    Vector3 scaler = transform.localScale;
+    scaler.x *= -1;
+    transform.localScale = scaler;
+}
 }

@@ -2001,7 +2001,7 @@ MonoBehaviour:
   offset: 0
   projectile: {fileID: 7673517390994890173, guid: 8696eecf4934d60428feadb8cd14b779, type: 3}
   shotPoint: {fileID: 1583463025}
-  startTimeBtwShots: 0.5
+  startTimeBtwShots: 0.75
   eastOffsetDistance: 0
 --- !u!212 &607291845
 SpriteRenderer:
