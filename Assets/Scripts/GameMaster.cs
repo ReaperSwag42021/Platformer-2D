@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,15 +23,21 @@ public class GameMaster : MonoBehaviour
         if (runningTimer)
         {
             currentTime -= Time.deltaTime;
-            timerText.text = "Death Timer: " + currentTime;
+            timerText.text = "Death Timer: " + System.Math.Round(currentTime, 0);
             if (currentTime <= 0)
             {
                 runningTimer = false;
                 player.Die();
-                RestartLevel();
+                StartCoroutine(RestartLevelAfterDelay(5));
             }
         }
             
+    }
+
+    IEnumerator RestartLevelAfterDelay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        RestartLevel();
     }
 
     public void RestartLevel()
