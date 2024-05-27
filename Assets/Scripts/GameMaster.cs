@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
     public bool runningTimer;
     public float currentTime;
-    public float maxTime = 40;
+    public float maxTime = 30;
 
     public PlayerLife player;
+
+    public Text timerText;
 
     void Start()
     {
@@ -16,13 +19,18 @@ public class GameMaster : MonoBehaviour
 
     public void Update()
     {
-        currentTime -= Time.deltaTime;
-        if (currentTime <= 0)
+        if (runningTimer)
         {
-            runningTimer = false;
-            player.Die();
-            RestartLevel();
+            currentTime -= Time.deltaTime;
+            timerText.text = "Death Timer: " + currentTime;
+            if (currentTime <= 0)
+            {
+                runningTimer = false;
+                player.Die();
+                RestartLevel();
+            }
         }
+            
     }
 
     public void RestartLevel()
