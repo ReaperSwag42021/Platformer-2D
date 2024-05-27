@@ -174,7 +174,7 @@ MonoBehaviour:
   deathAnim: {fileID: 3673490573511494824}
   moveSpeed: 4
   chaseDistance: 10
-  damageCooldown: 1.25
+  damageCooldown: 0.75
 --- !u!50 &6482138959667686959
 Rigidbody2D:
   serializedVersion: 4

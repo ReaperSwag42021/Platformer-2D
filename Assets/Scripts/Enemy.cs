@@ -51,78 +51,78 @@ public class Enemy : MonoBehaviour
     }
 
 
-public void TakeDamage(int damage)
-{
-    if (isDead) return;
-
-    health -= damage;
-
-    Debug.Log("Enemy took damage. Current health: " + health);
-
-    if (health <= 0)
+    public void TakeDamage(int damage)
     {
-        Die();
-    }
-}
+        if (isDead) return;
 
-private void MoveTowardsPlayer()
-{
-    Vector2 direction = (player.position - transform.position).normalized;
-    rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+        health -= damage;
 
-    if (direction.x > 0 && !isFacingRight)
-    {
-        Flip();
-    }
-    else if (direction.x < 0 && isFacingRight)
-    {
-        Flip();
-    }
-}
+        Debug.Log("Enemy took damage. Current health: " + health);
 
-private void StopMovement()
-{
-    rb.velocity = new Vector2(0, rb.velocity.y);
-}
-
-private void Die()
-{
-    if (isDead) return;
-
-    isDead = true;
-    rb.velocity = Vector2.zero;
-
-    Debug.Log("Enemy is dying.");
-
-    
-    GetComponent<BoxCollider2D>().enabled = false;
-
-    
-    if (anim != null)
-    {
-        anim.SetTrigger("die");
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
-    
-    this.enabled = false;
+    private void MoveTowardsPlayer()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
 
-    Object.Destroy(rb);
-    Object.Destroy(gameObject, 3f);
-}
+        if (direction.x > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (direction.x < 0 && isFacingRight)
+        {
+            Flip();
+        }
+    }
 
-private void UpdateAnimationState()
-{
-    if (isDead) return;
+    private void StopMovement()
+    {
+        rb.velocity = new Vector2(0, rb.velocity.y);
+    }
 
-    MovementState state = rb.velocity.x != 0 ? MovementState.running : MovementState.idle;
-    anim.SetInteger("state", (int)state);
-}
+    private void Die()
+    {
+        if (isDead) return;
 
-private void Flip()
-{
-    isFacingRight = !isFacingRight;
-    Vector3 scaler = transform.localScale;
-    scaler.x *= -1;
-    transform.localScale = scaler;
-}
+        isDead = true;
+        rb.velocity = Vector2.zero;
+
+        Debug.Log("Enemy is dying.");
+
+
+        GetComponent<BoxCollider2D>().enabled = false;
+
+
+        if (anim != null)
+        {
+            anim.SetTrigger("die");
+        }
+
+
+        this.enabled = false;
+
+        Object.Destroy(rb);
+        Object.Destroy(gameObject, 3f);
+    }
+
+    private void UpdateAnimationState()
+    {
+        if (isDead) return;
+
+        MovementState state = rb.velocity.x != 0 ? MovementState.running : MovementState.idle;
+        anim.SetInteger("state", (int)state);
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
 }

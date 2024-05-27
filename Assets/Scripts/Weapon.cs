@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     public float offset;
     public GameObject projectile;
-    //public GameObject shotEffect;
     public Transform shotPoint;
     private float timeBtwShots;
     public float startTimeBtwShots;
@@ -14,12 +11,10 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        // Handles the weapon rotation
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-        // Mirror the weapon when the mouse is to the left of the weapon's middle point
         if (difference.x < 0)
         {
             transform.localScale = new Vector3(1, -1, 1);
@@ -33,18 +28,15 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                // Calculate the east offset position
                 Vector3 eastOffset = shotPoint.position + (transform.right * eastOffsetDistance);
 
-                //Instantiate(shotEffect, eastOffset, Quaternion.identity);
 
-                // Calculate the direction
                 Vector3 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - eastOffset);
                 direction.z = 0;
                 direction.Normalize();
 
                 GameObject newProjectile = Instantiate(projectile, eastOffset, Quaternion.identity);
-                newProjectile.GetComponent<Projectile>().SetDirection(direction); // Set the direction based on the normalized vector
+                newProjectile.GetComponent<Projectile>().SetDirection(direction);
                 timeBtwShots = startTimeBtwShots;
             }
         }

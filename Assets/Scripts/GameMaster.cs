@@ -31,7 +31,7 @@ public class GameMaster : MonoBehaviour
                 StartCoroutine(RestartLevelAfterDelay(5));
             }
         }
-            
+
     }
 
     IEnumerator RestartLevelAfterDelay(int seconds)

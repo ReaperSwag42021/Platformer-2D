@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// KeyCollector script
 public class KeyCollector : MonoBehaviour
 {
     private int keys = 0;
@@ -10,6 +9,7 @@ public class KeyCollector : MonoBehaviour
     [SerializeField] private AudioSource collectionSoundEffect;
     public Finish finish;
     public Chest_Item Chest_Item;
+    public PlayerLife playerLife; // Add this line
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +19,10 @@ public class KeyCollector : MonoBehaviour
             collectionSoundEffect.Play();
             keys++;
             keysText.text = "Keys: " + keys;
+            if (keys == 3) // Add these lines
+            {
+                playerLife.BecomeInvincible();
+            }
         }
         else if (collision.gameObject.CompareTag("Finish"))
         {
