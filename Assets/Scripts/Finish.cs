@@ -4,6 +4,7 @@ public class Finish : MonoBehaviour
 {
     [SerializeField] private AudioSource finishSound;
     [SerializeField] private Animator myAnimationController;
+    public PlayerLife playerLife;
 
     private bool levelCompleted = false;
 
@@ -19,6 +20,7 @@ public class Finish : MonoBehaviour
             finishSound.Play();
             myAnimationController.SetTrigger("PlayAnimChest");
             levelCompleted = true;
+            playerLife.StopAllCoroutinesInPlayerLife(); // Stop all coroutines in PlayerLife, including the death timer
             Invoke("CompleteLevel", 8f);
         }
     }

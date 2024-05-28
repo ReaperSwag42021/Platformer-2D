@@ -172,8 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   deathAnim: {fileID: 3673490573511494824}
-  moveSpeed: 4
-  chaseDistance: 10
+  moveSpeed: 4.5
+  chaseDistance: 7.5
   damageCooldown: 0.75
 --- !u!50 &6482138959667686959
 Rigidbody2D:
