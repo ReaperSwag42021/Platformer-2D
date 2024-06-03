@@ -9,7 +9,7 @@ public class PlayerLife : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
     public HealthBar healthBar;
-    public Text invincibilityText; // Reference to the Text component for invincibility countdown
+    public Text invincibilityText;
     bool isDying = false;
     private bool isInvincible = false;
     public Finish finish;
@@ -27,7 +27,7 @@ public class PlayerLife : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        invincibilityText.text = "Invincible: "; // Initialize the text without the timer
+        invincibilityText.text = "Invincible: ";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -83,10 +83,9 @@ public class PlayerLife : MonoBehaviour
     public void BecomeInvincible()
     {
         isInvincible = true;
-        invincibilityText.gameObject.SetActive(true); // Show the invincibility text
+        invincibilityText.gameObject.SetActive(true);
         StartCoroutine(InvincibilityCountdown(6));
 
-        // Change player and weapon color to yellow
         GetComponent<SpriteRenderer>().color = Color.yellow;
         Transform weaponTransform = transform.Find("Weapon");
         if (weaponTransform != null)
@@ -99,21 +98,20 @@ public class PlayerLife : MonoBehaviour
     {
         while (duration > 0)
         {
-            invincibilityText.text = "Invincible: " + duration; // Update only the timer part of the text
+            invincibilityText.text = "Invincible: " + duration;
             yield return new WaitForSeconds(1);
             duration--;
         }
 
-        invincibilityText.text = "Invincible: "; // Keep the text "Invincible:" and remove the timer
+        invincibilityText.text = "Invincible: ";
         StopInvincibility();
     }
 
     private void StopInvincibility()
     {
         isInvincible = false;
-        invincibilityText.gameObject.SetActive(false); // Hide the invincibility text
+        invincibilityText.gameObject.SetActive(false);
 
-        // Change player and weapon color back to normal
         GetComponent<SpriteRenderer>().color = Color.white;
         Transform weaponTransform = transform.Find("Weapon");
         if (weaponTransform != null)

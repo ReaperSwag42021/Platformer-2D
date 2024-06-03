@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf83327552892343b9399c8b5d8a9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   deathAnim: {fileID: 3673490573511494824}
   moveSpeed: 4.5
   chaseDistance: 9

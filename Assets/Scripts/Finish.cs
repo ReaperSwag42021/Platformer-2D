@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
@@ -22,7 +23,12 @@ public class Finish : MonoBehaviour
             levelCompleted = true;
             playerLife.StopAllCoroutinesInPlayerLife();
             playerLife.gameMaster.StopTimer();
-            Invoke("CompleteLevel", 8f);
+            Invoke("CompleteLevel", 6f);
         }
+    }
+
+    public void CompleteLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -1,4 +1,3 @@
-// Updated KeyCollector script
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class KeyCollector : MonoBehaviour
     public Finish finish;
     public Chest_Item Chest_Item;
     public PlayerLife playerLife;
-    public Weapon weapon; // Reference to the Weapon script
+    public Weapon weapon;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,9 +20,9 @@ public class KeyCollector : MonoBehaviour
             collectionSoundEffect.Play();
             keys++;
             keysText.text = "Keys: " + keys;
-            if (weapon.bulletCount < 3) // Check if the bullet count is less than 3
+            if (weapon.bulletCount < 3)
             {
-                weapon.AddBullets(3 - weapon.bulletCount); // Add bullets up to a maximum of 3
+                weapon.AddBullets(3 - weapon.bulletCount);
             }
             if (keys == 3)
             {
