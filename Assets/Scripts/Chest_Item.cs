@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Chest_Item script
 public class Chest_Item : MonoBehaviour
 {
     [SerializeField] private Animator myAnimationController;
