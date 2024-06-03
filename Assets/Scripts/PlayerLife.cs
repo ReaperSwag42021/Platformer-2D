@@ -12,6 +12,7 @@ public class PlayerLife : MonoBehaviour
     public Text invincibilityText; // Reference to the Text component for invincibility countdown
     bool isDying = false;
     private bool isInvincible = false;
+    public Finish finish;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -73,7 +74,7 @@ public class PlayerLife : MonoBehaviour
 
     public IEnumerator Restartlevel()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         StopAllCoroutines();
         gameMaster.RestartLevel();

@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     public float maxTime = 30;
 
     public PlayerLife player;
+    public Finish finish;
 
     public Text timerText;
 
@@ -28,7 +29,7 @@ public class GameMaster : MonoBehaviour
             {
                 runningTimer = false;
                 player.Die();
-                StartCoroutine(RestartLevelAfterDelay(5));
+                StartCoroutine(RestartLevelAfterDelay(3));
             }
         }
 
@@ -38,6 +39,11 @@ public class GameMaster : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         RestartLevel();
+    }
+
+    public void StopTimer()
+    {
+        runningTimer = false;
     }
 
     public void RestartLevel()

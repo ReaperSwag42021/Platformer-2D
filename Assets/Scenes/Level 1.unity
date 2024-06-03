@@ -1183,7 +1183,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 752972263}
   invincibilityText: {fileID: 490007018}
-  enemy: {fileID: 0}
+  finish: {fileID: 1383312602}
   deathSoundEffect: {fileID: 290707052}
 --- !u!82 &290707052
 AudioSource:
@@ -1569,6 +1569,7 @@ MonoBehaviour:
   currentTime: 0
   maxTime: 30
   player: {fileID: 290707051}
+  finish: {fileID: 0}
   timerText: {fileID: 918201721}
 --- !u!4 &382648858
 Transform:

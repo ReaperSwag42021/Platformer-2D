@@ -20,7 +20,8 @@ public class Finish : MonoBehaviour
             finishSound.Play();
             myAnimationController.SetTrigger("PlayAnimChest");
             levelCompleted = true;
-            playerLife.StopAllCoroutinesInPlayerLife(); // Stop all coroutines in PlayerLife, including the death timer
+            playerLife.StopAllCoroutinesInPlayerLife();
+            playerLife.gameMaster.StopTimer();
             Invoke("CompleteLevel", 8f);
         }
     }
