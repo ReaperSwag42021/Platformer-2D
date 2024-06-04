@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: 9a6560e5bacb40847bb1b879ede354fb
-AssetOrigin:
-  serializedVersion: 1
-  productId: 103811
-  packageName: 'Fantasy Wooden GUI : Free'
-  packageVersion: 2.0
-  assetPath: Assets/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium stone.png
-  uploadId: 294936
+guid: 07dd085d444a0584b87c321e28b46b80
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 669325997598586580
+    second: Left_Mouse_Click_0
+  - first:
+      213: -6975195293597634236
+    second: Left_Mouse_Click_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,9 +69,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -102,18 +101,62 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Left_Mouse_Click_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 160
+        width: 147
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d63cc5d27ce94900800000000000000
+      internalID: 669325997598586580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Mouse_Click_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 19
+        width: 147
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441f22e26d0233f90800000000000000
+      internalID: -6975195293597634236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: df9a847929e4a3e438d0fa6212ce6915
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Left_Mouse_Click_0: 669325997598586580
+      Left_Mouse_Click_1: -6975195293597634236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 9a6560e5bacb40847bb1b879ede354fb
-AssetOrigin:
-  serializedVersion: 1
-  productId: 103811
-  packageName: 'Fantasy Wooden GUI : Free'
-  packageVersion: 2.0
-  assetPath: Assets/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium stone.png
-  uploadId: 294936
+guid: 913d478071b45074fa86f60c354e44f9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8289106366168562162
+    second: A-D-Space_0
+  - first:
+      213: 3678821352070156472
+    second: A-D-Space_1
+  - first:
+      213: 6163426930048304722
+    second: A-D-Space_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,9 +72,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -102,18 +104,84 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: A-D-Space_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 277
+        width: 316
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9f7ec8252d80370800000000000000
+      internalID: 8289106366168562162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-D-Space_1
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 277
+        width: 316
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0934a478ccd0330800000000000000
+      internalID: 3678821352070156472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-D-Space_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 962
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2560b9c3324e88550800000000000000
+      internalID: 6163426930048304722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: df9a847929e4a3e438d0fa6212ce6915
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      A-D-Space_0: 8289106366168562162
+      A-D-Space_1: 3678821352070156472
+      A-D-Space_2: 6163426930048304722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
